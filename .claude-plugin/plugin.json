@@ -1,0 +1,13 @@
+{
+  "name": "genready",
+  "version": "1.0.0",
+  "description": "Make a website readable and citable by AI search engines and usable by AI agents. Scans the live site with GenReady, fixes robots.txt, llms.txt, structured data and more, then verifies each fix against the live site.",
+  "author": {
+    "name": "GenReady",
+    "url": "https://genready.ai"
+  },
+  "homepage": "https://genready.ai/docs/mcp",
+  "repository": "https://github.com/odb366/genready-claude-plugin",
+  "license": "MIT",
+  "keywords": ["ai-readiness", "geo", "llms-txt", "robots-txt", "structured-data", "mcp", "ai-search"]
+}

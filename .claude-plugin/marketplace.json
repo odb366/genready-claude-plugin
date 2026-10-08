@@ -1,0 +1,20 @@
+{
+  "name": "genready",
+  "owner": {
+    "name": "GenReady",
+    "email": "kris@genready.ai"
+  },
+  "metadata": {
+    "description": "GenReady plugins for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "genready",
+      "source": "./",
+      "description": "Scan, fix and verify a website's AI readiness from Claude Code.",
+      "version": "1.0.0",
+      "homepage": "https://genready.ai/docs/mcp",
+      "license": "MIT"
+    }
+  ]
+}
