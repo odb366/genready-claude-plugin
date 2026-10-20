@@ -1,7 +1,7 @@
 {
   "name": "genready",
   "displayName": "GenReady",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Scan a website for AI search and agent readiness, fix what the scan finds in your repo, and check on the live site that the fixes worked.",
   "author": {
     "name": "GenReady",
@@ -19,5 +19,8 @@
     "mcp",
     "ai-search"
   ],
-  "privacyPolicyUrl": "https://genready.ai/privacy"
+  "privacyPolicyUrl": "https://genready.ai/privacy",
+  "termsOfServiceUrl": "https://genready.ai/terms",
+  "supportUrl": "https://genready.ai/support",
+  "documentationUrl": "https://genready.ai/docs/mcp"
 }
