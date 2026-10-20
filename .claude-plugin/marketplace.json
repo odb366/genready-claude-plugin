@@ -12,7 +12,7 @@
       "name": "genready",
       "source": "./",
       "description": "Scan, fix and verify a website's AI readiness from Claude.",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "homepage": "https://genready.ai/docs/mcp",
       "license": "MIT"
     }
