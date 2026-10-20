@@ -9,15 +9,15 @@ Scan a site, fix what can be fixed, and prove each fix against the live site.
 
 ## Before you start
 
-This plugin connects the GenReady MCP server for you. It reads the API key from the `GENREADY_API_KEY` environment variable. If the GenReady tools are missing or every call fails with 401, tell the user to:
+This plugin connects the GenReady MCP server for you, and the user signs in to their GenReady account through OAuth. If the GenReady tools are missing, or every call says the user must authorize, tell the user to connect GenReady:
 
-1. Create a key at https://genready.ai/api-keys. Site-wide work also needs **Read site data** enabled on the key.
-2. Set it where Claude Code starts, for example `export GENREADY_API_KEY=gr_live_...` in the shell profile.
-3. Restart Claude Code.
+1. In Claude Code, run `/mcp`, choose `genready`, and select Authenticate. In the Claude app, open the plugin's Connectors tab and connect GenReady.
+2. Sign in to GenReady in the browser window, and approve the access.
+3. Ask again.
 
 Then stop. Do not edit files before a scan has run: without findings, a change is a guess, and nothing can verify it.
 
-Without the plugin, the same server connects with:
+Without the plugin, the same server connects with an API key from https://genready.ai/api-keys:
 
 ```bash
 claude mcp add --transport http genready https://genready.ai/mcp \
@@ -26,11 +26,12 @@ claude mcp add --transport http genready https://genready.ai/mcp \
 
 ## What costs money
 
-| Call                                                           | Cost                                              |
-| -------------------------------------------------------------- | ------------------------------------------------- |
-| `analyze_website`                                              | One API credit per scan                           |
-| `get_findings`, `get_artifact`, `get_fix_plan`, `list_domains` | Free                                              |
-| `verify_findings`                                              | Free, and it is the correct way to re-check a fix |
+| Call                                                           | Cost                                                                                                             |
+| -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `analyze_website`                                              | One API credit per scan                                                                                          |
+| `start_site_analysis`                                          | One credit per page. Ask the user first. Through OAuth it scans at most 25 pages unless a higher limit is passed |
+| `get_findings`, `get_artifact`, `get_fix_plan`, `list_domains` | Free                                                                                                             |
+| `verify_findings`                                              | Free, and it is the correct way to re-check a fix                                                                |
 
 Scan once, then iterate with `verify_findings`. Re-running `analyze_website` to see whether a fix worked wastes a credit and takes far longer.
 

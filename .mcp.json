@@ -1,9 +1,8 @@
 {
-  "genready": {
-    "type": "http",
-    "url": "https://genready.ai/mcp",
-    "headers": {
-      "Authorization": "Bearer ${GENREADY_API_KEY}"
+  "mcpServers": {
+    "genready": {
+      "type": "http",
+      "url": "https://genready.ai/mcp"
     }
   }
 }
